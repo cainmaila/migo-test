@@ -1,21 +1,28 @@
 <template>
   <div class="item">
-    <div class="c1" />
-    <LineBox class="c2" v-bind="$attrs" />
-    <div class="c3">245151</div>
-    <div class="c3">Demonlover</div>
-    <div class="c4">Movie</div>
-    <div class="c5">4</div>
-    <div class="c6">36</div>
-    <div class="c7">Jan 3, 2020</div>
-    <div class="c7">Single Movie</div>
+    <div class="table-cell align-middle">
+      <div class="flex items-center">
+        <div class="c1">x</div>
+        <div class="c1">XXX</div>
+        <div class="c2">715156</div>
+        <div class="c3">
+          Long Season name | Long Season name | Long Season name | Long Season
+          name | Long Se...
+        </div>
+      </div>
+    </div>
+    <div class="table-cell align-middle c4">Episode</div>
+    <div class="table-cell align-middle c5">--</div>
+    <div class="table-cell align-middle c6">EP1</div>
+    <div class="table-cell align-middle c7">--</div>
+    <div class="table-cell align-middle c8">All Episodes</div>
   </div>
 </template>
 <script>
-import LineBox from './box/LineBox.vue'
+import CollapseBox from './box/CollapseBox.vue'
 export default {
   name: 'EpisodeRow',
-  components: { LineBox },
+  components: { CollapseBox },
   data() {
     return {}
   },
@@ -24,30 +31,29 @@ export default {
 <style scoped>
 .item {
   height: 48px;
-  display: flex;
-  align-items: center;
+  display: table-row;
   background: #fff;
   box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.15);
 }
 .c1 {
-  flex: 0 0 40px;
+  width: 32px;
 }
 .c2 {
-  flex: 0 0 40px;
+  width: 56px;
 }
 .c3 {
-  flex: 1 1 auto;
+  max-width: 256px;
 }
 .c4 {
-  flex: 1 1 auto;
+  max-width: 72px;
 }
 .c5 {
-  flex: 1 1 auto;
+  max-width: 48px;
 }
 .c6 {
-  flex: 1 1 auto;
+  max-width: 56px;
 }
-.c7 {
-  flex: 1 1 auto;
+.c8 {
+  max-width: 160px;
 }
 </style>

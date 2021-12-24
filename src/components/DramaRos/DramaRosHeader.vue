@@ -1,13 +1,15 @@
 <template>
   <div id="DramaRosHeader">
-    <div class="c1"></div>
-    <div class="c2">ID</div>
-    <div class="c3">Title Name</div>
-    <div class="c4">Type</div>
-    <div class="c5">Season</div>
-    <div class="c6">Episode</div>
-    <div class="c7">Published</div>
-    <div class="c8">Programmable</div>
+    <div class="table-cell align-middle">
+      <div class="table-cell c1"></div>
+      <div class="table-cell c2">ID</div>
+      <div class="table-cell c3">Title Name</div>
+    </div>
+    <div class="table-cell align-middle c4">Type</div>
+    <div class="table-cell align-middle c5">Season</div>
+    <div class="table-cell align-middle c6">Episode</div>
+    <div class="table-cell align-middle c7">Published</div>
+    <div class="table-cell align-middle c8">Programmable</div>
   </div>
 </template>
 <script>
@@ -21,32 +23,28 @@ export default {
 <style scoped>
 #DramaRosHeader {
   height: 48px;
-  display: flex;
-  align-items: center;
+  display: table-row;
   background: #2020200d;
 }
 .c1 {
-  flex: 0 0 32px;
+  width: 32px;
 }
 .c2 {
-  flex: 0 0 64px;
+  width: 56px;
 }
 .c3 {
-  flex: 4 0 auto;
+  max-width: 256px;
 }
 .c4 {
-  flex: 1 0 auto;
+  width: 72px;
 }
 .c5 {
-  flex: 1 0 auto;
+  width: 48px;
 }
 .c6 {
-  flex: 1 0 auto;
-}
-.c7 {
-  flex: 4 0 auto;
+  width: 56px;
 }
 .c8 {
-  flex: 2 0 auto;
+  width: 150px;
 }
 </style>

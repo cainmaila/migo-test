@@ -2,8 +2,9 @@
   <div id="DramaRos">
     <DramaRosHeader />
     <SeriesRow />
-    <!-- <SeasonRow />
-    <SeasonRow type="1" />
+    <SeasonRow />
+    <EpisodeRow />
+    <!-- <SeasonRow type="1" />
     <SeasonRow type="2" />
     <EpisodeRow type="1" />
     <EpisodeRow type="2" /> -->
@@ -24,6 +25,8 @@ export default {
 </script>
 <style scoped>
 #DramaRos {
+  display: table;
+  width: 100%;
   border: 1px solid #c3c3c2;
   border-radius: 4px;
   font-weight: 500;
