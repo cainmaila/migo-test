@@ -2,7 +2,7 @@
   <div class="item">
     <div class="table-cell align-middle">
       <div class="flex items-center tb1">
-        <LineBox2 class="c1" />
+        <LineBox2 class="c1" :type="1" />
         <LineBox class="c2" v-bind="$attrs" />
         <div class="c2-id">715156</div>
         <div class="c3">
