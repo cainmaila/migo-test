@@ -1,5 +1,5 @@
 <template>
-  <div class="collapse">
+  <div class="collapse the-middle">
     <img class="icon" :class="{ open }" src="img/collapse.svg" alt="" />
   </div>
 </template>
@@ -20,9 +20,9 @@ export default {
 }
 .icon {
   width: 10px;
-  height: 10px;
+  height: 8px;
 }
-.icon.opne {
+.open {
   transform: rotate(90deg);
 }
 </style>

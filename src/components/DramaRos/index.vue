@@ -3,7 +3,8 @@
     <DramaRosHeader />
     <SeriesRow />
     <SeasonRow />
-    <EpisodeRow />
+    <EpisodeRow :type="1" />
+    <EpisodeRow :type="2" />
     <!-- <SeasonRow type="1" />
     <SeasonRow type="2" />
     <EpisodeRow type="1" />

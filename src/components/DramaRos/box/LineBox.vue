@@ -15,8 +15,8 @@ export default {
 </script>
 <style scoped>
 .line-box {
-  flex: 0 0 50px;
   height: 100%;
+  width: 40px;
   position: relative;
 }
 
@@ -33,7 +33,7 @@ export default {
 .box2 {
   height: 50%;
   width: 25px;
-  right: 0px;
+  left: 15px;
   border-style: none none solid none;
 }
 .box3 {
