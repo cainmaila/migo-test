@@ -2,7 +2,7 @@
   <div class="item">
     <div class="table-cell align-middle">
       <div class="flex items-center tb1">
-        <LineBox class="c1" :type="2" />
+        <LineBox class="c1" :type="3" />
         <MinusBox class="c1" :type="2" />
         <div class="c2">715156</div>
         <div class="c3">

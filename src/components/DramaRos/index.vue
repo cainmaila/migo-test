@@ -5,10 +5,9 @@
     <SeasonRow />
     <EpisodeRow :type="1" />
     <EpisodeRow :type="2" />
-    <!-- <SeasonRow type="1" />
-    <SeasonRow type="2" />
-    <EpisodeRow type="1" />
-    <EpisodeRow type="2" /> -->
+    <SeasonRow />
+    <EpisodeRow :type="1" />
+    <EpisodeRow :type="2" />
   </div>
 </template>
 <script>

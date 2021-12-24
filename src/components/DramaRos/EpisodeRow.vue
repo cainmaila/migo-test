@@ -2,8 +2,8 @@
   <div class="item">
     <div class="table-cell align-middle">
       <div class="flex items-center tb1">
-        <div class="c1"></div>
-        <LineBox class="c2" v-on="$props" />
+        <LineBox2 class="c1" />
+        <LineBox class="c2" v-bind="$attrs" />
         <div class="c2-id">715156</div>
         <div class="c3">
           Long Season name | Long Season name | Long Season name | Long Season
@@ -25,10 +25,11 @@
 </template>
 <script>
 import LineBox from './box/LineBox.vue'
+import LineBox2 from './box/LineBox2.vue'
 import Switch from './ui/Switch.vue'
 export default {
   name: 'EpisodeRow',
-  components: { LineBox, Switch },
+  components: { LineBox, LineBox2, Switch },
   data() {
     return {}
   },
@@ -45,6 +46,7 @@ export default {
   width: 480px;
 }
 .c1 {
+  height: 48px;
   width: 35px;
 }
 .c2 {
