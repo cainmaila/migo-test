@@ -2,7 +2,7 @@
   <div class="item">
     <LineBox class="c1" v-bind="$attrs" />
     <MinusBox v-bind="$attrs" />
-    <div class="c2">1233</div>
+    <div class="c2">245151</div>
     <div class="c3">Demonlover</div>
     <div class="c4">Movie</div>
     <div class="c5">4</div>
@@ -15,7 +15,7 @@
 import LineBox from './box/LineBox.vue'
 import MinusBox from './box/MinusBox.vue'
 export default {
-  name: 'MovItem',
+  name: 'SeasonRow',
   components: { LineBox, MinusBox },
   data() {
     return {}
@@ -31,7 +31,7 @@ export default {
   box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.15);
 }
 .c1 {
-  flex: 0 0 50px;
+  flex: 0 0 40px;
 }
 .c2 {
   flex: 1 1 auto;

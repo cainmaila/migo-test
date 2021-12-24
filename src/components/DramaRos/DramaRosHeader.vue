@@ -7,7 +7,7 @@
     <div class="c5">Season</div>
     <div class="c6">Episode</div>
     <div class="c7">Published</div>
-    <div class="c7">Programmable</div>
+    <div class="c8">Programmable</div>
   </div>
 </template>
 <script>
@@ -26,24 +26,27 @@ export default {
   background: #2020200d;
 }
 .c1 {
-  flex: 0 0 36px;
+  flex: 0 0 32px;
 }
 .c2 {
-  flex: 1 1 auto;
+  flex: 0 0 64px;
 }
 .c3 {
-  flex: 1 1 auto;
+  flex: 4 0 auto;
 }
 .c4 {
-  flex: 1 1 auto;
+  flex: 1 0 auto;
 }
 .c5 {
-  flex: 1 1 auto;
+  flex: 1 0 auto;
 }
 .c6 {
-  flex: 1 1 auto;
+  flex: 1 0 auto;
 }
 .c7 {
-  flex: 1 1 auto;
+  flex: 4 0 auto;
+}
+.c8 {
+  flex: 2 0 auto;
 }
 </style>

@@ -27,12 +27,12 @@ export default {
 }
 .box1 {
   height: 100%;
-  width: 50%;
+  width: 15px;
   border-style: none solid none none;
 }
 .box2 {
   height: 50%;
-  width: 50%;
+  width: 25px;
   right: 0px;
   border-style: none none solid none;
 }

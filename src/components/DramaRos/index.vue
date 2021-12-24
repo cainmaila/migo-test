@@ -1,18 +1,22 @@
 <template>
   <div id="DramaRos">
     <DramaRosHeader />
-    <MovItem />
-    <MovItem type="1" />
-    <MovItem type="2" />
-    <MovItem />
+    <SeriesRow />
+    <!-- <SeasonRow />
+    <SeasonRow type="1" />
+    <SeasonRow type="2" />
+    <EpisodeRow type="1" />
+    <EpisodeRow type="2" /> -->
   </div>
 </template>
 <script>
 import DramaRosHeader from './DramaRosHeader.vue'
-import MovItem from './MovItem.vue'
+import SeriesRow from './SeriesRow.vue'
+import SeasonRow from './SeasonRow.vue'
+import EpisodeRow from './EpisodeRow.vue'
 export default {
   name: 'DramaRos',
-  components: { DramaRosHeader, MovItem },
+  components: { DramaRosHeader, SeasonRow, SeriesRow, EpisodeRow },
   data() {
     return {}
   },
@@ -22,7 +26,6 @@ export default {
 #DramaRos {
   border: 1px solid #c3c3c2;
   border-radius: 4px;
-
   font-weight: 500;
   font-size: 12px;
   line-height: 14px;
