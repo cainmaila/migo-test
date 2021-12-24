@@ -8,6 +8,42 @@
     <SeasonRow />
     <EpisodeRow :type="1" />
     <EpisodeRow :type="2" />
+    <!---------------------------------------------------------------->
+    <SeriesRow />
+    <SeasonRow />
+    <EpisodeRow :type="1" />
+    <EpisodeRow :type="2" />
+    <SeasonRow />
+    <EpisodeRow :type="1" />
+    <EpisodeRow :type="2" />
+    <SeriesRow />
+    <SeasonRow />
+    <EpisodeRow :type="1" />
+    <EpisodeRow :type="2" />
+    <SeasonRow />
+    <EpisodeRow :type="1" />
+    <EpisodeRow :type="2" />
+    <SeriesRow />
+    <SeasonRow />
+    <EpisodeRow :type="1" />
+    <EpisodeRow :type="2" />
+    <SeasonRow />
+    <EpisodeRow :type="1" />
+    <EpisodeRow :type="2" />
+    <SeriesRow />
+    <SeasonRow />
+    <EpisodeRow :type="1" />
+    <EpisodeRow :type="2" />
+    <SeasonRow />
+    <EpisodeRow :type="1" />
+    <EpisodeRow :type="2" />
+    <SeriesRow />
+    <SeasonRow />
+    <EpisodeRow :type="1" />
+    <EpisodeRow :type="2" />
+    <SeasonRow />
+    <EpisodeRow :type="1" />
+    <EpisodeRow :type="2" />
   </div>
 </template>
 <script>

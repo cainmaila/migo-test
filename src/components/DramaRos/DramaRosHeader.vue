@@ -23,8 +23,10 @@ export default {
 <style scoped>
 #DramaRosHeader {
   height: 48px;
-  display: table-row;
+  /* display: table-row; */
+  display: table-header-group;
   background: #2020200d;
+  box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.15);
 }
 .c1 {
   width: 32px;
