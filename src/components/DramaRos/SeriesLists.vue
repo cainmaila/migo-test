@@ -1,11 +1,17 @@
 <template>
   <SeriesRow :data="seriesData" :key="seriesData.title_id" v-bind="$attrs" />
   <template v-if="seriesData.collapseType === 2">
-    <template v-for="season in filterList(seasons)" :key="season.season_id">
+    <template
+      v-for="season in settingSeasonLinBoxType(filterList(seasons))"
+      :key="season.season_id"
+    >
       <SeasonRow :seasonData="season" @minus="onMinus" />
       <template v-if="season.minusBoxType === 2">
         <EpisodeRow
-          v-for="episode in filterList(season.episodes)"
+          v-for="episode in settingEpisodeLinBoxType(
+            filterList(season.episodes),
+            season.isLast ? 0 : 1,
+          )"
           :key="episode.episode_id"
           :episodeData="episode"
         />
@@ -46,6 +52,27 @@ export default {
           return isFilter
         })
         .toArray()
+    },
+    settingSeasonLinBoxType(seasons) {
+      let _lsatItem
+      seasons.forEach((_item) => {
+        _lsatItem = _item
+        _lsatItem.lineBoxType = 1
+        _lsatItem.isLast = false
+      })
+      _lsatItem && (_lsatItem.lineBoxType = 2)
+      _lsatItem && (_lsatItem.isLast = true)
+      return seasons
+    },
+    settingEpisodeLinBoxType(episodes, type) {
+      let _lsatItem
+      episodes.forEach((_item) => {
+        _lsatItem = _item
+        _lsatItem.lineBox2Type = type
+        _lsatItem.lineBoxType = 1
+      })
+      _lsatItem && (_lsatItem.lineBoxType = 2)
+      return episodes
     },
   },
 }

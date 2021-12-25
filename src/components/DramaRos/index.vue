@@ -91,29 +91,7 @@ function settingSeriesCollapseType(_series) {
     _item.content_type === 'Movie'
       ? (_item.collapseType = 0)
       : (_item.collapseType = 1)
-    settingSeasonLinBoxType(_item)
   })
-}
-
-function settingSeasonLinBoxType(_series) {
-  let _lsatItem
-  _series.seasons.forEach((_item) => {
-    _lsatItem = _item
-    _lsatItem.lineBoxType = 1
-    settingEpisodeLinBoxType(_item, 1)
-  })
-  _lsatItem && (_lsatItem.lineBoxType = 2)
-  _lsatItem && settingEpisodeLinBoxType(_lsatItem, 0)
-}
-
-function settingEpisodeLinBoxType(_seasons, type) {
-  let _lsatItem
-  _seasons.episodes.forEach((_item) => {
-    _lsatItem = _item
-    _lsatItem.lineBox2Type = type
-    _lsatItem.lineBoxType = 1
-  })
-  _lsatItem && (_lsatItem.lineBoxType = 2)
 }
 </script>
 <style scoped>
