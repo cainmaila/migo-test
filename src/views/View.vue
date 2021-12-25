@@ -1,21 +1,39 @@
-<script setup>
-import { ref } from 'vue'
+<script async setup>
+import { ref, watch, onMounted, reactive } from 'vue'
 import MigoHandler from '../components/MigoHeader/index.vue'
 import DramaRos from '../components/DramaRos/index.vue'
 import Search from '../components/Search.vue'
 
-defineProps({
-  msg: String,
-})
+const store = reactive({ searchText: null, series: [] })
+watch(
+  () => store.searchText,
+  (val) => {
+    console.log('searchText!!', val)
+    store.series = seriesRef.value
+  },
+)
 
-const count = ref(0)
+watch(
+  () => store.series,
+  (val) => {
+    console.log('seriesList!', val)
+  },
+)
+
+import axios from 'axios'
+const seriesRef = ref()
+onMounted(async () => {
+  const { data } = await axios.get('./titles.json')
+  seriesRef.value = data
+  store.searchText = ''
+})
 </script>
 
 <template>
   <MigoHandler />
   <div class="page-content">
     <h1>Inventory Manager</h1>
-    <Search />
+    <Search v-model:inputText="store.searchText" />
     <DramaRos />
   </div>
 </template>

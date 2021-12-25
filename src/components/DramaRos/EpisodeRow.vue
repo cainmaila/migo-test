@@ -42,6 +42,10 @@ export default {
   background: #fff;
   box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.15);
 }
+.item:hover {
+  background: rgba(78, 160, 221, 0.1);
+  border: 5px solid #fff;
+}
 .tb1 {
   width: 480px;
 }

@@ -1,14 +1,34 @@
 <template>
   <div id="Search">
-    <input type="search" placeholder="Search for titles in inventory" />
+    <input
+      type="search"
+      placeholder="Search for titles in inventory"
+      v-model="text"
+    />
     <img src="img/search.svg" alt="" />
   </div>
 </template>
 <script>
+let _tmp
 export default {
   name: 'Search',
+  props: ['inputText'],
+  emits: ['update:inputText'],
   data() {
     return {}
+  },
+  computed: {
+    text: {
+      get() {
+        return this.inputText
+      },
+      set(val) {
+        clearTimeout(_tmp)
+        _tmp = setTimeout(() => {
+          this.$emit('update:inputText', val)
+        }, 200) //lazy 200ms!
+      },
+    },
   },
 }
 </script>
