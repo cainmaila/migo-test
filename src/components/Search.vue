@@ -25,7 +25,7 @@ export default {
       set(val) {
         clearTimeout(_tmp)
         _tmp = setTimeout(() => {
-          this.$emit('update:inputText', val)
+          this.$emit('update:inputText', val.trim())
         }, 200) //lazy 200ms!
       },
     },

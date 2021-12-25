@@ -1,11 +1,11 @@
 <template>
   <SeriesRow :data="seriesData" :key="seriesData.title_id" v-bind="$attrs" />
   <template v-if="seriesData.collapseType === 2">
-    <template v-for="season in seasons" :key="season.season_id">
+    <template v-for="season in filterList(seasons)" :key="season.season_id">
       <SeasonRow :seasonData="season" @minus="onMinus" />
       <template v-if="season.minusBoxType === 2">
         <EpisodeRow
-          v-for="episode in season.episodes"
+          v-for="episode in filterList2(season.episodes)"
           :key="episode.episode_id"
           :episodeData="episode"
         />
@@ -14,6 +14,7 @@
   </template>
 </template>
 <script>
+import Lazy from 'lazy.js'
 import SeriesRow from './SeriesRow.vue'
 import SeasonRow from './SeasonRow.vue'
 import EpisodeRow from './EpisodeRow.vue'
@@ -38,6 +39,20 @@ export default {
         season: seasonData,
         series: this.seriesData,
       })
+    },
+    filterList(list) {
+      return Lazy(list)
+        .filter(({ isFilter }) => {
+          return isFilter
+        })
+        .toArray()
+    },
+    filterList2(list) {
+      return Lazy(list)
+        .filter(({ isFilter }) => {
+          return isFilter
+        })
+        .toArray()
     },
   },
 }
