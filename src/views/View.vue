@@ -11,12 +11,12 @@ watch(
   () => store.searchText,
   (val) => {
     console.log('searchText!!', val)
-    // store.series = Lazy(seriesRef.value || [])
-    //   .filter(({ content_type }) => {
-    //     return content_type === 'Series'
-    //   })
-    //   .toArray()
-    store.series = seriesRef.value
+    store.series = Lazy(seriesRef.value || [])
+      .filter(({ content_type }) => {
+        return content_type === 'Series'
+      })
+      .toArray()
+    // store.series = seriesRef.value
   },
 )
 
@@ -54,8 +54,20 @@ function settingSeasonLinBoxType(_series) {
   _series.seasons.forEach((_item) => {
     _lsatItem = _item
     _lsatItem.lineBoxType = 1
+    settingEpisodeLinBoxType(_item, 1)
   })
   _lsatItem && (_lsatItem.lineBoxType = 2)
+  _lsatItem && settingEpisodeLinBoxType(_lsatItem, 0)
+}
+
+function settingEpisodeLinBoxType(_seasons, type) {
+  _seasons.episodes.forEach((_item) => {
+    _item.lineBox2Type = type
+  })
+}
+
+function onMinus({ season, series }) {
+  season.minusBoxType = season.minusBoxType ? 0 : 2
 }
 </script>
 
@@ -64,7 +76,7 @@ function settingSeasonLinBoxType(_series) {
   <div class="page-content">
     <h1>Inventory Manager</h1>
     <Search v-model:inputText="store.searchText" />
-    <DramaRos :list="store.series" @collapse="onCollapse" />
+    <DramaRos :list="store.series" @collapse="onCollapse" @minus="onMinus" />
   </div>
 </template>
 

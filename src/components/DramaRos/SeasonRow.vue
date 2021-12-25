@@ -3,7 +3,11 @@
     <div class="table-cell align-middle">
       <div class="flex items-center tb1">
         <LineBox class="c1" :type="seasonData.lineBoxType" />
-        <MinusBox class="c1" :type="0" />
+        <MinusBox
+          class="c1 cursor-pointer"
+          :type="seasonData.minusBoxType"
+          @pointerup.stop="onPointerup"
+        />
         <div class="c2">{{ seasonData.season_id }}</div>
         <div class="c3">
           {{ seasonData.season_name }}
@@ -39,6 +43,11 @@ export default {
   props: ['seasonData'],
   data() {
     return {}
+  },
+  methods: {
+    onPointerup() {
+      this.$emit('minus', this.seasonData)
+    },
   },
   created() {
     dateFormatByKey(this.seasonData)

@@ -2,18 +2,21 @@
   <div class="item">
     <div class="table-cell align-middle">
       <div class="flex items-center tb1">
-        <LineBox2 class="c1" :type="1" />
+        <LineBox2 class="c1" :type="episodeData.lineBox2Type" />
         <LineBox class="c2" v-bind="$attrs" />
-        <div class="c2-id">715156</div>
+        <div class="c2-id">
+          {{ episodeData.minusBoxType }}||{{ episodeData.episode_id }}
+        </div>
         <div class="c3">
-          Long Season name | Long Season name | Long Season name | Long Season
-          name | Long Se...
+          {{ episodeData.episode_name }}
         </div>
       </div>
     </div>
     <div class="table-cell align-middle c4">Episode</div>
     <div class="table-cell align-middle c5">--</div>
-    <div class="table-cell align-middle c6">EP1</div>
+    <div class="table-cell align-middle c6">
+      EP{{ episodeData.episode_number }}
+    </div>
     <div class="table-cell align-middle c7">--</div>
     <div class="table-cell align-middle c8">
       <div class="flex items-center">
@@ -30,6 +33,7 @@ import Switch from './ui/Switch.vue'
 export default {
   name: 'EpisodeRow',
   components: { LineBox, LineBox2, Switch },
+  props: ['episodeData'],
   data() {
     return {}
   },

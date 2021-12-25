@@ -6,7 +6,7 @@
 <script>
 export default {
   name: 'LineBox2',
-  props: ['type'],
+  props: ['type'], //1 0
   data() {
     return {}
   },
