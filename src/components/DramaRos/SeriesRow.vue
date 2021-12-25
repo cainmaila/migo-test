@@ -106,6 +106,7 @@ export default {
 }
 .c8 {
   max-width: 160px;
+  min-width: 126px;
 }
 .padding-16 {
   padding-left: 16px;

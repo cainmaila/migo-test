@@ -41,5 +41,7 @@ h1 {
 .page-content {
   padding: 16px 24px;
   margin-top: 64px;
+  height: 100%;
+  /* overflow-y: hidden; */
 }
 </style>
