@@ -26,7 +26,7 @@
     </div>
     <div class="table-cell align-middle c8">
       <div class="flex items-center">
-        <Switch :off="true" />
+        <Switch :off="seasonData.switchOff" @ck="onSwitch" />
         <span class="padding-16">All Episodes</span>
       </div>
     </div>
@@ -47,6 +47,9 @@ export default {
   methods: {
     onPointerup() {
       this.$emit('minus', this.seasonData)
+    },
+    onSwitch() {
+      this.$emit('switch', { season: this.seasonData })
     },
   },
   created() {

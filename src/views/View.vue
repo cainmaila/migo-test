@@ -3,10 +3,9 @@ import { ref, watch, onMounted, reactive } from 'vue'
 import MigoHandler from '../components/MigoHeader/index.vue'
 import DramaRos from '../components/DramaRos/index.vue'
 import Search from '../components/Search.vue'
+import { switchOffController } from '../controller/switchController.js'
 
 const store = reactive({ searchText: null, series: [] })
-
-import Lazy from 'lazy.js'
 watch(
   () => store.searchText,
   (val) => {
@@ -17,21 +16,6 @@ watch(
     //   })
     //   .toArray()
     store.series = seriesRef.value
-  },
-)
-
-function seasonNamefilter(seasons, val) {
-  return Lazy(seasons || [])
-    .filter(({ season_name, episodes }) => {
-      return season_name.search(val) !== -1
-    })
-    .toArray()
-}
-
-watch(
-  () => store.series,
-  (val) => {
-    // console.log('seriesList!', val)
   },
 )
 
@@ -49,7 +33,11 @@ onMounted(async () => {
   <div class="page-content">
     <h1>Inventory Manager</h1>
     <Search v-model:inputText="store.searchText" />
-    <DramaRos :list="store.series" :searchText="store.searchText" />
+    <DramaRos
+      :list="store.series"
+      :searchText="store.searchText"
+      @switch="switchOffController"
+    />
   </div>
 </template>
 

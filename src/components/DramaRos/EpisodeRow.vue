@@ -20,7 +20,7 @@
     <div class="table-cell align-middle c7">--</div>
     <div class="table-cell align-middle c8">
       <div class="flex items-center">
-        <Switch :off="true" />
+        <Switch :off="episodeData.switchOff" @ck="onSwitch" />
         <span class="padding-16">All Episodes</span>
       </div>
     </div>
@@ -36,6 +36,11 @@ export default {
   props: ['episodeData'],
   data() {
     return {}
+  },
+  methods: {
+    onSwitch() {
+      this.$emit('switch', { episode: this.episodeData })
+    },
   },
 }
 </script>

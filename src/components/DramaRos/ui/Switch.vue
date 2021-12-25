@@ -1,5 +1,9 @@
 <template>
-  <div class="switch cursor-pointer" :class="{ off: !off }">
+  <div
+    class="switch cursor-pointer"
+    :class="{ off: !off }"
+    @pointerup.stop="$emit('ck')"
+  >
     <div class="o"></div>
   </div>
 </template>

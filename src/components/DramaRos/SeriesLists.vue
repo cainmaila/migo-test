@@ -5,7 +5,11 @@
       v-for="season in settingSeasonLinBoxType(filterList(seasons))"
       :key="season.season_id"
     >
-      <SeasonRow :seasonData="season" @minus="onMinus" />
+      <SeasonRow
+        :seasonData="season"
+        @minus="onMinus"
+        @switch="onSeasonSwitch"
+      />
       <template v-if="season.minusBoxType === 2">
         <EpisodeRow
           v-for="episode in settingEpisodeLinBoxType(
@@ -14,6 +18,7 @@
           )"
           :key="episode.episode_id"
           :episodeData="episode"
+          @switch="() => onEpisodeSwitch(season, episode)"
         />
       </template>
     </template>
@@ -40,6 +45,16 @@ export default {
     },
   },
   methods: {
+    onSeasonSwitch(data) {
+      data.series = this.seriesData
+      this.$emit('switch', data)
+    },
+    onEpisodeSwitch(season, episode) {
+      this.onSeasonSwitch({
+        season,
+        episode,
+      })
+    },
     onMinus(seasonData) {
       this.$emit('minus', {
         season: seasonData,

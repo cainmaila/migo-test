@@ -19,7 +19,7 @@
     </div>
     <div class="table-cell align-middle c8">
       <div class="flex items-center">
-        <Switch :off="true" />
+        <Switch :off="data.switchOff" @ck="onSwitch" />
         <span class="padding-16">Single Movie</span>
       </div>
     </div>
@@ -51,6 +51,9 @@ export default {
   methods: {
     onAction() {
       this.$emit('collapse', this.data)
+    },
+    onSwitch() {
+      this.$emit('switch', { series: this.data })
     },
   },
   created() {
