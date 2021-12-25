@@ -3,9 +3,9 @@
     <div class="table-cell align-middle">
       <div class="flex items-center tb1">
         <LineBox2 class="c1" :type="episodeData.lineBox2Type" />
-        <LineBox class="c2" v-bind="$attrs" />
+        <LineBox class="c2" :type="episodeData.lineBoxType" v-bind="$attrs" />
         <div class="c2-id">
-          {{ episodeData.minusBoxType }}||{{ episodeData.episode_id }}
+          {{ episodeData.episode_id }}
         </div>
         <div class="c3">
           {{ episodeData.episode_name }}
@@ -55,7 +55,7 @@ export default {
 }
 .c1 {
   height: 48px;
-  width: 35px;
+  width: 40px;
 }
 .c2 {
   height: 48px;

@@ -61,9 +61,13 @@ function settingSeasonLinBoxType(_series) {
 }
 
 function settingEpisodeLinBoxType(_seasons, type) {
+  let _lsatItem
   _seasons.episodes.forEach((_item) => {
-    _item.lineBox2Type = type
+    _lsatItem = _item
+    _lsatItem.lineBox2Type = type
+    _lsatItem.lineBoxType = 1
   })
+  _lsatItem && (_lsatItem.lineBoxType = 2)
 }
 
 function onMinus({ season, series }) {
