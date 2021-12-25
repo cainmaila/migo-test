@@ -34,7 +34,9 @@ export default {
   components: { SeriesRow, SeasonRow, EpisodeRow },
   props: ['seriesData'],
   data() {
-    return {}
+    return {
+      switchStr: '',
+    }
   },
   computed: {
     seasons() {

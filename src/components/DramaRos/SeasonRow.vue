@@ -27,7 +27,7 @@
     <div class="table-cell align-middle c8">
       <div class="flex items-center">
         <Switch :off="seasonData.switchOff" @ck="onSwitch" />
-        <span class="padding-16">All Episodes</span>
+        <span class="padding-16">{{ seasonData.switchStr }}</span>
       </div>
     </div>
   </div>

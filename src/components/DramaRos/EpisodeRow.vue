@@ -21,7 +21,7 @@
     <div class="table-cell align-middle c8">
       <div class="flex items-center">
         <Switch :off="episodeData.switchOff" @ck="onSwitch" />
-        <span class="padding-16">All Episodes</span>
+        <span class="padding-16">{{ switchStr }}</span>
       </div>
     </div>
   </div>
@@ -30,12 +30,18 @@
 import LineBox from './box/LineBox.vue'
 import LineBox2 from './box/LineBox2.vue'
 import Switch from './ui/Switch.vue'
+import { SWITCH_STR } from '../../controller/switchController.js'
 export default {
   name: 'EpisodeRow',
   components: { LineBox, LineBox2, Switch },
   props: ['episodeData'],
   data() {
     return {}
+  },
+  computed: {
+    switchStr() {
+      return SWITCH_STR.PER_EPISODE
+    },
   },
   methods: {
     onSwitch() {
@@ -83,5 +89,8 @@ export default {
 }
 .c8 {
   max-width: 160px;
+}
+.padding-16 {
+  padding-left: 16px;
 }
 </style>

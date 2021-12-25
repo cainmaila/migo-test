@@ -20,7 +20,7 @@
     <div class="table-cell align-middle c8">
       <div class="flex items-center">
         <Switch :off="data.switchOff" @ck="onSwitch" />
-        <span class="padding-16">Single Movie</span>
+        <span class="padding-16">{{ switchStr }}</span>
       </div>
     </div>
   </div>
@@ -29,6 +29,7 @@
 import { dateFormatByKey } from '../../tools/tools.js'
 import CollapseBox from './box/CollapseBox.vue'
 import Switch from './ui/Switch.vue'
+import { SWITCH_STR } from '../../controller/switchController.js'
 export default {
   name: 'SeriesRow',
   components: { CollapseBox, Switch },
@@ -46,6 +47,12 @@ export default {
       return this.data?.content_type === 'Series'
         ? this.data.episode_count
         : '--'
+    },
+    isMovie() {
+      return this.data?.content_type === 'Movie'
+    },
+    switchStr() {
+      return this.isMovie ? SWITCH_STR.SINGLE_MOVIE : this.data.switchStr || ''
     },
   },
   methods: {
