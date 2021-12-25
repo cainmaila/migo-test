@@ -16,16 +16,31 @@
 export default {
   name: 'DramaRosHeader',
   data() {
-    return {}
+    return {
+      off: false,
+    }
+  },
+  watch: {
+    off(val) {
+      console.log('xxx', val)
+    },
+  },
+  mounted() {
+    window.addEventListener('scroll', (e) => {
+      if (document.documentElement.scrollTop > 140) {
+        this.off = true
+      } else {
+        this.off = false
+      }
+    })
   },
 }
 </script>
 <style scoped>
 #DramaRosHeader {
   height: 48px;
-  /* display: table-row; */
   display: table-header-group;
-  background: #2020200d;
+  background: rgba(32, 32, 32, 0.05);
   box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.15);
 }
 .c1 {
