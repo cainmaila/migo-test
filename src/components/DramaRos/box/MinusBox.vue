@@ -28,7 +28,7 @@ export default {
 }
 .box {
   position: absolute;
-  top: 50%;
+  top: 70%;
   width: 50%;
   height: 50%;
   border: 2px solid #c3c3c2;

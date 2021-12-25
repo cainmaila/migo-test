@@ -17,7 +17,7 @@ export default {
 .minus-icon {
   width: 30px;
   height: 30px;
-  background: #fff;
+  /* background: #fff; */
 }
 .icon {
   width: 14px;

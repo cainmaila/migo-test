@@ -16,7 +16,6 @@ export default {
 .collapse {
   width: 14px;
   height: 14px;
-  background-color: #fff;
 }
 .icon {
   width: 10px;
