@@ -32,8 +32,21 @@ const seriesRef = ref()
 onMounted(async () => {
   const { data } = await axios.get('./titles.json')
   seriesRef.value = data
+  settingSeriesCollapseType(data)
   store.searchText = ''
 })
+
+function settingSeriesCollapseType(_series) {
+  _series.forEach((_item) => {
+    _item.content_type === 'Movie'
+      ? (_item.collapseType = 0)
+      : (_item.collapseType = 1)
+  })
+}
+
+function onCollapse(_series) {
+  _series.collapseType = _series.collapseType === 1 ? 2 : 1
+}
 </script>
 
 <template>
@@ -41,7 +54,7 @@ onMounted(async () => {
   <div class="page-content">
     <h1>Inventory Manager</h1>
     <Search v-model:inputText="store.searchText" />
-    <DramaRos :list="store.series" />
+    <DramaRos :list="store.series" @collapse="onCollapse" />
   </div>
 </template>
 

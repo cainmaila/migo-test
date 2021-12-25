@@ -2,7 +2,7 @@
   <div class="item">
     <div class="table-cell align-middle">
       <div class="flex items-center tb1">
-        <CollapseBox class="c1" :type="2" />
+        <CollapseBox class="c1" :type="data.collapseType" @ck="onAction" />
         <div class="c2">{{ data.title_id }}</div>
         <div class="c3">
           {{ data.title_name }}
@@ -43,6 +43,11 @@ export default {
       return this.data?.content_type === 'Series'
         ? this.data.episode_count
         : '--'
+    },
+  },
+  methods: {
+    onAction() {
+      this.$emit('collapse', this.data)
     },
   },
 }

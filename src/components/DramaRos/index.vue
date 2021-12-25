@@ -1,7 +1,12 @@
 <template>
   <div id="DramaRos">
     <DramaRosHeader />
-    <SeriesRow v-for="data in list" :data="data" :key="data.title_id" />
+    <SeriesRow
+      v-for="data in list"
+      :data="data"
+      :key="data.title_id"
+      v-bind="$attrs"
+    />
     <!-- <SeriesRow />
     <SeasonRow />
     <EpisodeRow :type="1" />

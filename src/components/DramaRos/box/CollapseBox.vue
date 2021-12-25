@@ -1,7 +1,12 @@
 <template>
   <div class="collapse-box">
     <div class="box" v-if="type == 2"></div>
-    <Collapse class="collapse-icon" v-if="type > 0" :open="type == 2" />
+    <Collapse
+      class="collapse-icon cursor-pointer"
+      v-if="type > 0"
+      :open="type == 2"
+      @pointerup.stop="$emit('ck')"
+    />
   </div>
 </template>
 <script>

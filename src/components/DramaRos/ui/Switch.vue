@@ -1,5 +1,5 @@
 <template>
-  <div class="switch" :class="{ off: !off }">
+  <div class="switch cursor-pointer" :class="{ off: !off }">
     <div class="o"></div>
   </div>
 </template>
@@ -21,7 +21,6 @@ export default {
   padding: 3px;
   border-radius: 20px;
   background: #08aa5e;
-  cursor: pointer;
 }
 .off {
   flex-direction: row;
