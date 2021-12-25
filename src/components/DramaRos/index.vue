@@ -34,7 +34,7 @@ export default {
     },
   },
   watch: {
-    list(val) {
+    filterList(val) {
       val && settingSeriesCollapseType(val)
     },
     searchText(val) {

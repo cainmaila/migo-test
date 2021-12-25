@@ -5,7 +5,7 @@
       <SeasonRow :seasonData="season" @minus="onMinus" />
       <template v-if="season.minusBoxType === 2">
         <EpisodeRow
-          v-for="episode in filterList2(season.episodes)"
+          v-for="episode in filterList(season.episodes)"
           :key="episode.episode_id"
           :episodeData="episode"
         />
@@ -41,13 +41,6 @@ export default {
       })
     },
     filterList(list) {
-      return Lazy(list)
-        .filter(({ isFilter }) => {
-          return isFilter
-        })
-        .toArray()
-    },
-    filterList2(list) {
       return Lazy(list)
         .filter(({ isFilter }) => {
           return isFilter
