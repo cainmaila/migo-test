@@ -5,10 +5,17 @@ import DramaRos from '../components/DramaRos/index.vue'
 import Search from '../components/Search.vue'
 
 const store = reactive({ searchText: null, series: [] })
+
+import Lazy from 'lazy.js'
 watch(
   () => store.searchText,
   (val) => {
     console.log('searchText!!', val)
+    // store.series = Lazy(seriesRef.value || [])
+    //   .filter(({ content_type }) => {
+    //     return content_type === 'Series'
+    //   })
+    //   .toArray()
     store.series = seriesRef.value
   },
 )
@@ -34,7 +41,7 @@ onMounted(async () => {
   <div class="page-content">
     <h1>Inventory Manager</h1>
     <Search v-model:inputText="store.searchText" />
-    <DramaRos />
+    <DramaRos :list="store.series" />
   </div>
 </template>
 

@@ -680,6 +680,11 @@ json-parse-even-better-errors@^2.3.0:
   resolved "https://registry.yarnpkg.com/json-parse-even-better-errors/-/json-parse-even-better-errors-2.3.1.tgz#7c47805a94319928e05777405dc12e1f7a4ee02d"
   integrity sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==
 
+lazy.js@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/lazy.js/-/lazy.js-0.5.1.tgz#9f05c27f42c66ae7f41814c9674d105efcbc432f"
+  integrity sha512-p9v24vaKrzS2mEx3yuzva/3M6I3+HwvXd0pB1Xf/IvsFIMdhQgmym7JBO0e7c0OZmKTo07sCuiCIm6jazSWFNw==
+
 lilconfig@^2.0.3:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/lilconfig/-/lilconfig-2.0.4.tgz#f4507d043d7058b380b6a8f5cb7bcd4b34cee082"

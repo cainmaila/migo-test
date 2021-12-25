@@ -1,49 +1,14 @@
 <template>
   <div id="DramaRos">
     <DramaRosHeader />
-    <SeriesRow />
+    <SeriesRow v-for="data in list" :data="data" :key="data.title_id" />
+    <!-- <SeriesRow />
     <SeasonRow />
     <EpisodeRow :type="1" />
     <EpisodeRow :type="2" />
     <SeasonRow />
     <EpisodeRow :type="1" />
-    <EpisodeRow :type="2" />
-    <!---------------------------------------------------------------->
-    <SeriesRow />
-    <SeasonRow />
-    <EpisodeRow :type="1" />
-    <EpisodeRow :type="2" />
-    <SeasonRow />
-    <EpisodeRow :type="1" />
-    <EpisodeRow :type="2" />
-    <SeriesRow />
-    <SeasonRow />
-    <EpisodeRow :type="1" />
-    <EpisodeRow :type="2" />
-    <SeasonRow />
-    <EpisodeRow :type="1" />
-    <EpisodeRow :type="2" />
-    <SeriesRow />
-    <SeasonRow />
-    <EpisodeRow :type="1" />
-    <EpisodeRow :type="2" />
-    <SeasonRow />
-    <EpisodeRow :type="1" />
-    <EpisodeRow :type="2" />
-    <SeriesRow />
-    <SeasonRow />
-    <EpisodeRow :type="1" />
-    <EpisodeRow :type="2" />
-    <SeasonRow />
-    <EpisodeRow :type="1" />
-    <EpisodeRow :type="2" />
-    <SeriesRow />
-    <SeasonRow />
-    <EpisodeRow :type="1" />
-    <EpisodeRow :type="2" />
-    <SeasonRow />
-    <EpisodeRow :type="1" />
-    <EpisodeRow :type="2" />
+    <EpisodeRow :type="2" /> -->
   </div>
 </template>
 <script>
@@ -54,6 +19,7 @@ import EpisodeRow from './EpisodeRow.vue'
 export default {
   name: 'DramaRos',
   components: { DramaRosHeader, SeasonRow, SeriesRow, EpisodeRow },
+  props: ['list'],
   data() {
     return {}
   },

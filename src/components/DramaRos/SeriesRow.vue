@@ -3,17 +3,18 @@
     <div class="table-cell align-middle">
       <div class="flex items-center tb1">
         <CollapseBox class="c1" :type="2" />
-        <div class="c2">715156</div>
+        <div class="c2">{{ data.title_id }}</div>
         <div class="c3">
-          Long Movie Title Name Long Movie Title NameLong Movie Title NameLong
-          Movie Ti...
+          {{ data.title_name }}
         </div>
       </div>
     </div>
-    <div class="table-cell align-middle c4">Movie</div>
-    <div class="table-cell align-middle c5">--</div>
-    <div class="table-cell align-middle c6">--</div>
-    <div class="table-cell align-middle c7">Jan 3, 2020</div>
+    <div class="table-cell align-middle c4">{{ data.content_type }}</div>
+    <div class="table-cell align-middle c5">{{ season }}</div>
+    <div class="table-cell align-middle c6">
+      {{ episode }}
+    </div>
+    <div class="table-cell align-middle c7">{{ data.publish_timestamp }}</div>
     <div class="table-cell align-middle c8">
       <div class="flex items-center">
         <Switch :off="true" />
@@ -28,8 +29,21 @@ import Switch from './ui/Switch.vue'
 export default {
   name: 'SeriesRow',
   components: { CollapseBox, Switch },
+  props: ['data'],
   data() {
     return {}
+  },
+  computed: {
+    season() {
+      return this.data?.content_type === 'Series'
+        ? this.data.seasons?.length
+        : '--'
+    },
+    episode() {
+      return this.data?.content_type === 'Series'
+        ? this.data.episode_count
+        : '--'
+    },
   },
 }
 </script>
