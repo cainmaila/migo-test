@@ -1,9 +1,9 @@
 <template>
   <div id="DramaRos">
     <DramaRosHeader />
-    <SeriesRow
+    <SeriesLists
       v-for="data in list"
-      :data="data"
+      :seriesData="data"
       :key="data.title_id"
       v-bind="$attrs"
     />
@@ -18,12 +18,12 @@
 </template>
 <script>
 import DramaRosHeader from './DramaRosHeader.vue'
-import SeriesRow from './SeriesRow.vue'
 import SeasonRow from './SeasonRow.vue'
 import EpisodeRow from './EpisodeRow.vue'
+import SeriesLists from './SeriesLists.vue'
 export default {
   name: 'DramaRos',
-  components: { DramaRosHeader, SeasonRow, SeriesRow, EpisodeRow },
+  components: { DramaRosHeader, SeasonRow, EpisodeRow, SeriesLists },
   props: ['list'],
   data() {
     return {}

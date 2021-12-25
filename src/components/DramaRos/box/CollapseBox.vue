@@ -27,13 +27,13 @@ export default {
 .collapse-icon {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: calc(50% - 1.5px);
   transform: translate(-50%, -50%);
 }
 .box {
   position: absolute;
   top: 50%;
-  right: 15.5px;
+  right: 17px;
   left: 0%;
   bottom: 0%;
   border: 2px solid #c3c3c2;

@@ -14,7 +14,9 @@
     <div class="table-cell align-middle c6">
       {{ episode }}
     </div>
-    <div class="table-cell align-middle c7">{{ data.publish_timestamp }}</div>
+    <div class="table-cell align-middle c7">
+      {{ data.publish_timestampStr }}
+    </div>
     <div class="table-cell align-middle c8">
       <div class="flex items-center">
         <Switch :off="true" />
@@ -24,6 +26,7 @@
   </div>
 </template>
 <script>
+import { dateFormatByKey } from '../../tools/tools.js'
 import CollapseBox from './box/CollapseBox.vue'
 import Switch from './ui/Switch.vue'
 export default {
@@ -49,6 +52,9 @@ export default {
     onAction() {
       this.$emit('collapse', this.data)
     },
+  },
+  created() {
+    dateFormatByKey(this.data)
   },
 }
 </script>

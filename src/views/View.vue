@@ -41,11 +41,21 @@ function settingSeriesCollapseType(_series) {
     _item.content_type === 'Movie'
       ? (_item.collapseType = 0)
       : (_item.collapseType = 1)
+    settingSeasonLinBoxType(_item)
   })
 }
 
 function onCollapse(_series) {
   _series.collapseType = _series.collapseType === 1 ? 2 : 1
+}
+
+function settingSeasonLinBoxType(_series) {
+  let _lsatItem
+  _series.seasons.forEach((_item) => {
+    _lsatItem = _item
+    _lsatItem.lineBoxType = 1
+  })
+  _lsatItem && (_lsatItem.lineBoxType = 2)
 }
 </script>
 

@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
+    "dateformat": "^5.0.2",
     "lazy.js": "^0.5.1",
     "vue": "^3.2.25"
   },

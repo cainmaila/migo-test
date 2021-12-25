@@ -2,36 +2,49 @@
   <div class="item">
     <div class="table-cell align-middle">
       <div class="flex items-center tb1">
-        <LineBox class="c1" :type="3" />
-        <MinusBox class="c1" :type="2" />
-        <div class="c2">715156</div>
+        <LineBox class="c1" :type="seasonData.lineBoxType" />
+        <MinusBox class="c1" :type="0" />
+        <div class="c2">{{ seasonData.season_id }}</div>
         <div class="c3">
-          Long Season name | Long Season name | Long Season name | Long Season
-          name | Long Se...
+          {{ seasonData.season_name }}
         </div>
       </div>
     </div>
     <div class="table-cell align-middle c4">Season</div>
-    <div class="table-cell align-middle c5">S2</div>
-    <div class="table-cell align-middle c6">2</div>
-    <div class="table-cell align-middle c7">Jan 3, 2020</div>
+    <div class="table-cell align-middle c5">
+      S{{ seasonData.season_number }}
+    </div>
+    <div class="table-cell align-middle c6">
+      {{ seasonData.episodes?.length || 0 }}
+    </div>
+    <div class="table-cell align-middle c7">
+      {{ seasonData.publish_timestampStr }}
+    </div>
     <div class="table-cell align-middle c8">
       <div class="flex items-center">
         <Switch :off="true" />
-        <span class="padding-16"> All Episodes</span>
+        <span class="padding-16">All Episodes</span>
       </div>
     </div>
   </div>
 </template>
 <script>
+import { dateFormatByKey } from '../../tools/tools.js'
 import LineBox from './box/LineBox.vue'
 import MinusBox from './box/MinusBox.vue'
 import Switch from './ui/Switch.vue'
 export default {
   name: 'SeasonRow',
   components: { LineBox, MinusBox, Switch },
+  props: ['seasonData'],
   data() {
     return {}
+  },
+  created() {
+    dateFormatByKey(this.seasonData)
+  },
+  mounted() {
+    // console.log('sss', this.seasonData)
   },
 }
 </script>
