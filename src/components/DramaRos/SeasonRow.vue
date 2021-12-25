@@ -55,9 +55,6 @@ export default {
   created() {
     dateFormatByKey(this.seasonData)
   },
-  mounted() {
-    // console.log('sss', this.seasonData)
-  },
 }
 </script>
 <style scoped>
