@@ -5,7 +5,7 @@
       placeholder="Search for titles in inventory"
       v-model="text"
     />
-    <img src="img/search.svg" alt="" />
+    <img :src="`img/search.svg`" alt="" />
   </div>
 </template>
 <script>

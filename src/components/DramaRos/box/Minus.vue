@@ -1,7 +1,7 @@
 <template>
   <div class="minus-icon the-middle">
-    <img class="icon" src="img/minus.svg" alt="" v-if="open" />
-    <img class="icon" src="img/plus.svg" alt="" v-else />
+    <img class="icon" :src="`img/minus.svg`" alt="" v-if="open" />
+    <img class="icon" :src="`img/plus.svg`" alt="" v-else />
   </div>
 </template>
 <script>

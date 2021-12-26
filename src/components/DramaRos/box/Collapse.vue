@@ -1,6 +1,6 @@
 <template>
   <div class="collapse the-middle">
-    <img class="icon" :class="{ open }" src="img/collapse.svg" alt="" />
+    <img class="icon" :class="{ open }" :src="`img/collapse.svg`" alt="" />
   </div>
 </template>
 <script>

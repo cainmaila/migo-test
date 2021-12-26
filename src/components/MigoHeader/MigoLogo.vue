@@ -1,7 +1,7 @@
 <template>
   <div id="MigoLogo" class="the-middle">
     <div class="the-middle">
-      <img src="migo.svg" alt="Migo" />
+      <img :src="`migo.svg`" alt="Migo" />
       <div class="logo-tile">Content<br />Marketing</div>
     </div>
   </div>

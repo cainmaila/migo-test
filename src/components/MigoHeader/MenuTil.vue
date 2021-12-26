@@ -1,7 +1,7 @@
 <template>
   <div id="MenuTil">
     <div>
-      <img src="img/inventory.svg" alt="" />
+      <img :src="`img/inventory.svg`" alt="" />
     </div>
     <div class="til">Inventory</div>
   </div>
