@@ -1,9 +1,11 @@
 <template>
   <div id="DramaRosHeader">
     <div class="table-cell align-middle">
-      <div class="table-cell c1"></div>
-      <div class="table-cell c2">ID</div>
-      <div class="table-cell c3">Title Name</div>
+      <div class="flex items-center tb1">
+        <div class="table-cell c1"></div>
+        <div class="table-cell c2">ID</div>
+        <div class="table-cell c3">Title Name</div>
+      </div>
     </div>
     <div class="table-cell align-middle c4">Type</div>
     <div class="table-cell align-middle c5">Season</div>
@@ -42,6 +44,12 @@ export default {
   display: table-header-group;
   background: rgba(32, 32, 32, 0.05);
   box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.15);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+}
+.tb1 {
+  width: 340px;
 }
 .c1 {
   width: 32px;
