@@ -11,6 +11,7 @@ import axios from 'axios'
 const seriesRef = ref()
 onMounted(async () => {
   const { data } = await axios.get('./titles.json')
+  document.getElementById('loading').remove()
   seriesRef.value = data
   store.searchText = ''
 })

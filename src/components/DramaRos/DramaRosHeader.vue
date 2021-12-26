@@ -69,6 +69,9 @@ export default {
 .c6 {
   width: 56px;
 }
+.c7 {
+  width: 200px;
+}
 .c8 {
   width: 150px;
 }
